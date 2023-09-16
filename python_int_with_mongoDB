@@ -1,0 +1,3 @@
+#pymongo might not be available by default. This will install it on your system
+pip install pymongo
+
