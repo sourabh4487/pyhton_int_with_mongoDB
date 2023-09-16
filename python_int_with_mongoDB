@@ -1,3 +1,14 @@
 #pymongo might not be available by default. This will install it on your system
 pip install pymongo
 
+# go to Mongodb.com, create a free M0 cluster, set user name and password
+# go to connect to your application and select driver as Python and version <>
+# copy the connection code and paste in python
+# go to database access and chage the access level to Admin Atlas
+
+import pymongo
+client = pymongo.MongoClient("mongodb+srv://<username>:<username>@cluster0.ltb3khg.mongodb.net/?retryWrites=true&w=majority") # This is the code from mongodb application connection
+db = client.test
+print(db) # If the connection is established, you will see DB details in Python IDE
+# change the username and password to as that was set in MongoDB while cluster creation
+
