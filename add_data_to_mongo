@@ -1,0 +1,37 @@
+db = client['iNeuron']
+col = db['course']
+col1 = db['students']
+
+data = {
+    'coursename' :['full stack data science ','full stack data analytics' , 'big data' , 'devops' , 'blockchain'],
+    'course instructor' :['sudhanshu' ,'anand' , 'shashank' , 'hitesh' , 'navin'],
+    'start_date' : '12-12-2023',
+    'duration' : 'six months',
+    'mode' : 'live online',
+    'certification' : 'yes',
+    'prequisite' : ' Dedication',
+    'resume' : 'yes',
+    'mockinterview' : 'yes'
+}
+col.insert_one(data)
+col.insert_many(data2)
+rec = col.find()
+for i in rec:
+    print(i)
+col.find_one() # randomly gives you a data
+for i in col.find({},{'<key>': '<value>'}):
+    print(i)
+col.update_many({'<key> ': '<value>'}, {'$set':{'key ': <value>}})
+
+# To delete many data
+col.delete_many({'<key> ': '<value>'})
+
+for i in col.find({'<key> ': '<value>'}):
+    print(i)
+
+# To find a data
+for i in col.find({'<key>': {'$lte' : <value>}}):
+    print(i)
+
+# To update a data
+col.update_one({'<key> ': '<value>'}, {'$set' : {'<key> ': <value>}})
